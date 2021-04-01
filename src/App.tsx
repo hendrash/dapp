@@ -3,7 +3,6 @@ import { Route, Router, Switch } from "react-router-dom";
 import "./App.css";
 import SideNav from "./components/SideNav/SideNav";
 import history from "./routerHistory";
-import { Helmet } from "react-helmet";
 // import NotFound from "./views/NotFound";
 // import Blogs from "./views/Blogs/components";
 import SuspenseWithChunkError from "./views/SuspendWithChunkError";
