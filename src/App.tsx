@@ -3,7 +3,7 @@ import { Route, Router, Switch } from "react-router-dom";
 import "./App.css";
 import SideNav from "./components/SideNav/SideNav";
 import history from "./routerHistory";
-import {Helmet} from 'react-helmet';
+import { Helmet } from "react-helmet";
 // import NotFound from "./views/NotFound";
 // import Blogs from "./views/Blogs/components";
 import SuspenseWithChunkError from "./views/SuspendWithChunkError";
@@ -20,26 +20,29 @@ function App() {
     //   <MdShowChart/>
     //      </Box>
 
-    <div >
-     <SideNav/>
+    <div className="commonText">
+      <section className="sideNav">
+        <SideNav />
+      </section>
 
+
+    <article >
       <p className="glow App-header">MY DEFI NOTES AND ANALYSIS</p>
       <Router history={history}>
-          <SuspenseWithChunkError fallback={<PageLoader />}>
-            <Switch>
-              <Route path="/" exact>
-                <Home />
-              </Route>
-              <Route path="/blogs">
-                <Blogs />
-              </Route>
-              <Route component={NotFound}></Route>
-            </Switch>
-          </SuspenseWithChunkError>
+        <SuspenseWithChunkError fallback={<PageLoader />}>
+          <Switch>
+            <Route path="/" exact>
+              <Home />
+            </Route>
+            <Route path="/blogs">
+              <Blogs />
+            </Route>
+            <Route component={NotFound}></Route>
+          </Switch>
+        </SuspenseWithChunkError>
       </Router>
-
+</article>
     </div>
-
   );
 }
 

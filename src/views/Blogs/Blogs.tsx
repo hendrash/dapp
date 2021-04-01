@@ -1,4 +1,5 @@
+ import "./Blogs.css"
  const Blogs: React.FC=()=>{
-return (<div>Blogs</div>);
+return (<div className="font">Blogs</div>);
 }
 export default Blogs;
