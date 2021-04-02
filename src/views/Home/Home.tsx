@@ -1,5 +1,5 @@
 import "./Home.css"
 const Home: React.FC=()=>{
-    return(<div className="font">Home</div>)
+    return(<div >Home</div>)
 }
 export default Home;

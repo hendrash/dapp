@@ -9,4 +9,5 @@ export const items=[{
 export type itemType= {
     item: string,
     index: string
+    icon?: string
 } 
