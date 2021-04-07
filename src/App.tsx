@@ -32,10 +32,10 @@ function App() {
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
             <Route path="/" exact>
-              <Home />
+              <Blogs />
             </Route>
             <Route path="/blogs">
-              <Blogs />
+              <Home />
             </Route>
             <Route component={NotFound}></Route>
           </Switch>
