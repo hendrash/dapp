@@ -1,5 +1,5 @@
 import React, { lazy } from "react";
-import { Route, Router, Switch } from "react-router-dom";
+import { Route, Router, Switch, HashRouter } from "react-router-dom";
 import "./App.css";
 import SideNav from "./components/SideNav/SideNav";
 import history from "./routerHistory";
@@ -27,7 +27,8 @@ function App() {
 
     <article >
       <p className="glow App-header">Solidity Tricks</p>
-      <Router history={history}>
+      {/* history={history} */}
+      <HashRouter hashType="noslash" >
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
             <Route path="/" exact>
@@ -39,7 +40,7 @@ function App() {
             <Route component={NotFound}></Route>
           </Switch>
         </SuspenseWithChunkError>
-      </Router>
+      </HashRouter>
 </article>
     </div>
   );
