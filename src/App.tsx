@@ -27,8 +27,8 @@ function App() {
 
     <article >
       <p className="glow App-header">Solidity Tricks</p>
-      {/* history={history} */}
-      <HashRouter hashType="slash" >
+      <HashRouter>
+      <Router history={history}>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
             <Route path="/" exact>
@@ -40,7 +40,8 @@ function App() {
             <Route component={NotFound}></Route>
           </Switch>
         </SuspenseWithChunkError>
-      </HashRouter>
+      </Router>
+</HashRouter>
 </article>
     </div>
   );
