@@ -28,7 +28,7 @@ function App() {
     <article >
       <p className="glow App-header">Solidity Tricks</p>
       {/* history={history} */}
-      <HashRouter hashType="noslash" >
+      <HashRouter hashType="slash" >
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
             <Route path="/" exact>
