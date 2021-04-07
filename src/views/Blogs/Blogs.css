@@ -1,0 +1,22 @@
+img.right {
+    
+    display: block;
+    float:left;margin-right:3rem;
+  }
+ img.left {
+    word-break: break-all; 
+    display: block;
+    float:left;padding:10px;
+  }
+  img.push{
+
+    display: block;
+      padding-left: 7rem;
+  }
+  p{
+      font-size: large;
+      font-weight: 500;
+  }
+  .margins{
+      margin-right: 5em;
+  }

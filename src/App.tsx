@@ -26,7 +26,7 @@ function App() {
 
 
     <article >
-      <p className="glow App-header">MY DEFI NOTES AND ANALYSIS</p>
+      <p className="glow App-header">Solidity Tricks</p>
       <Router history={history}>
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
