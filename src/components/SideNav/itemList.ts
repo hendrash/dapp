@@ -4,7 +4,7 @@ export const items=[{
     index:"/"
 },{
     item:"Blogs",
-    index:"/#/blogs"
+    index:"#/blogs"
 }]
 export type itemType= {
     item: string,
