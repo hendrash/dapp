@@ -33,14 +33,7 @@ const Blogs: React.FC = () => {
       <br/><br/>
       <br/><br/>
         <p>
-          By updating the balance before we send the ether we can ensure that
-          the current balance is correct. The example we looked at is a reentry
-          single function attack but there is also cross-function reentrancy
-          attacks as well which is a little harder to detect and they occur when
-          an attacker can affect the state of a victim contract, It's important
-          to point out that contracts should never trust external contract calls
-          to execute without throwing an error. By updating the balance before
-          we send the ether we can ensure that the current balance is correct.
+          By updating the balance before we send the ether we can ensure that the current balance is correct.
           The example we looked at is a reentry single function attack but there
           is also cross-function reentrancy attacks as well which is a little
           harder to detect and they occur when an attacker can affect the state
