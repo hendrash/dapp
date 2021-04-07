@@ -27,21 +27,17 @@ function App() {
 
     <article >
       <p className="glow App-header">Solidity Tricks</p>
-      {/* <HashRouter hashType="noslash"> */}
-      <Router history={history}>
+      <HashRouter>
+      {/* <Router history={history}> */}
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
-            <Route path="/" exact>
-              <Blogs />
-            </Route>
-            <Route path="#/blogs">
-              <Home />
-            </Route>
+            <Route path="/" exact component={Blogs}/>
+            <Route path="#/blogs" component={Home}/>
             <Route component={NotFound}></Route>
           </Switch>
         </SuspenseWithChunkError>
-      </Router>
-{/* </HashRouter> */}
+</HashRouter>
+      {/* </Router> */}
 </article>
     </div>
   );
