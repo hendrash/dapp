@@ -32,7 +32,8 @@ function App() {
         <SuspenseWithChunkError fallback={<PageLoader />}>
           <Switch>
             <Route path="/" exact component={Blogs}/>
-            <Route path="#/blogs" component={Home}/>
+            { console.log("Prop")}
+            <Route path="/blogs" component={Home}/>
             <Route component={NotFound}></Route>
           </Switch>
         </SuspenseWithChunkError>
