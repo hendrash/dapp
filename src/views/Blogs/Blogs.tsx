@@ -6,13 +6,13 @@ import solution from "./img/solution.png";
 const Blogs: React.FC = () => {
   return (
     <div className="margins">
-      <h1>Reentry Attack</h1>
+      <h1>Single Function Reentry Attack</h1>
       <p>
         A Reentry Attack is a greedy exploit that can be exploited by completely
         draining a smart contract of all its ether. A Reentry Attack can occur
         when a contract does a internal count with a balance variable and
         exposes the withdraw function. The vulnerability can occur if the
-        contract transfers funds before it sets its balance to zero. This allows
+        contract transfers funds before the victum can update the balance. This allows
         the attacker to repeatedly call the withdraw function until the contract
         is completely drained. This is possible because of solidity’s
         asynchronous nature. All the attacker needs is the balance amount mapped

@@ -14,32 +14,24 @@ const NotFound = lazy(() => import("./views/NotFound"));
 
 function App() {
   return (
-    //   <Box className="boxStyle">
-    //     <span >Swap Charts </span>
-    //   <MdShowChart/>
-    //      </Box>
-
     <div className="commonText">
       <section className="sideNav">
         <SideNav />
       </section>
 
-
-    <article >
-      <p className="glow App-header">Solidity Tricks</p>
-      <HashRouter>
-      {/* <Router history={history}> */}
-        <SuspenseWithChunkError fallback={<PageLoader />}>
-          <Switch>
-            <Route path="/" exact component={Blogs}/>
-            { console.log("Prop")}
-            <Route path="/blogs" component={Home}/>
-            <Route component={NotFound}></Route>
-          </Switch>
-        </SuspenseWithChunkError>
-</HashRouter>
-      {/* </Router> */}
-</article>
+      <article>
+        <p className="glow App-header">Solidity Tricks</p>
+        <HashRouter>
+          <SuspenseWithChunkError fallback={<PageLoader />}>
+            <Switch>
+              <Route path="/" exact component={Blogs} />
+              {console.log("Prop")}
+              <Route path="/blogs" component={Home} />
+              <Route component={NotFound}></Route>
+            </Switch>
+          </SuspenseWithChunkError>
+        </HashRouter>
+      </article>
     </div>
   );
 }
