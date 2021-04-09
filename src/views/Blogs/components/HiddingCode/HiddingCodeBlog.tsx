@@ -10,7 +10,7 @@ const HiddingCodeBlog: React.FC = () => {
         explorer like etherscan the contract source has even been verified. Can
         you spot the vulnerability?
       </p>
-      <img src={NFTStore} alt="NFTStore"/>
+      <img src={NFTStore} alt="NFTStore" />
       <p>
         When you execute the contract the “buy” method inside of BuyANFT is
         never hit and you lose all your deposited funds. The vulnerability is
@@ -22,9 +22,8 @@ const HiddingCodeBlog: React.FC = () => {
         <br />
         This is the contract that was called
       </p>
-
-        <img src={HiddenCode} alt="HiddenCode"/>
-
+      <img src={HiddenCode} alt="HiddenCode" />
+      <a href="https://github.com/hendrash/SolidityExploits">There's a demo on github if you want to try it out ?</a>
     </div>
   );
 };
