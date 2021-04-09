@@ -3,7 +3,7 @@ export const items=[{
     item: "Home",
     index:"/"
 },{
-    item:"Blogs",
+    item:"Hidden Code",
     index:"#/blogs"
 }]
 export type itemType= {
