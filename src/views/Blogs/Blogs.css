@@ -6,17 +6,16 @@ img.right {
  img.left {
     word-break: break-all; 
     display: block;
-    float:left;padding:10px;
+    float:left;
+    padding:10px;
+
+      padding-right: 7rem;
   }
   img.push{
 
     display: block;
-      padding-left: 7rem;
   }
   p{
       font-size: large;
       font-weight: 500;
-  }
-  .margins{
-      margin-right: 5%;
   }

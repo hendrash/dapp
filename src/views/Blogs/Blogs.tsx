@@ -5,7 +5,7 @@ import solution from "./img/solution.png";
 
 const Blogs: React.FC = () => {
   return (
-    <div className="margins">
+    <div >
       <h1>Single Function Reentry Attack</h1>
       <p>
         A Reentry Attack is a greedy exploit that can be exploited by completely
