@@ -23,6 +23,8 @@ const HiddingCodeBlog: React.FC = () => {
         This is the contract that was called
       </p>
       <img src={HiddenCode} alt="HiddenCode" />
+      <br/>
+      <br/>
       <a href="https://github.com/hendrash/SolidityExploits">There's a demo on github if you want to try it out ?</a>
     </div>
   );
