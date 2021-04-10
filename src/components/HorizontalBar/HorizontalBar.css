@@ -1,0 +1,24 @@
+ul.horizontalBar {
+    list-style-type: none;
+    margin: 0;
+    overflow: hidden;
+  }
+  
+  li.horizontalBar {
+    float: left;
+  }
+  
+  li.horizontalBar a.horizontalBar {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+  }
+ .horizontalBar{
+    background-color: rgba(58, 62, 117, 0.98);
+    height: 100%;
+ } 
+.verticalCode{
+  font-size: 1.8rem;
+}
