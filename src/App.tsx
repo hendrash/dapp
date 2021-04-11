@@ -14,9 +14,7 @@ const NotFound = lazy(() => import("./views/NotFound"));
 function App() {
   return (
     <div className="commonText display">
-      <section className="topbar">
       <HorizontalBar ></HorizontalBar>
-</section>
       <section className="sideNav">
         <SideNav />
       </section>

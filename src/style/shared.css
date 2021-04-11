@@ -1,8 +1,13 @@
 ._glowHover:hover{
     color: white;
-    background-color: #5f4ef7;
+    /* background-color: #5f4ef7; */
     text-shadow: 0 0 10px #fff, 0 0 20px rgb(159, 161, 202), 0 0 30px #6c6acc, 0 0 40px #4f46d4, 0 0 50px #4624df, 0 0 60px #2a09e7, 0 0 70px #0400e6;
  /* color: inherit; */
 opacity: 1;
 cursor: pointer;
+}
+.expandable{
+padding-left: 15%;
+    /* float: right; */
+    font-size: xx-large;
 }
