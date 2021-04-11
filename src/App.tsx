@@ -1,4 +1,4 @@
-import React, { lazy } from "react";
+import React, { lazy, useState } from "react";
 import { Route, Router, Switch, HashRouter } from "react-router-dom";
 import "./App.css";
 import HorizontalBar from "./components/HorizontalBar/HorizontalBar";
@@ -12,12 +12,21 @@ const HiddingCode = lazy(() => import("./views/Blogs/components/HiddingCode"));
 const NotFound = lazy(() => import("./views/NotFound"));
 
 function App() {
+  // let show:Boolean=window.innerWidth>1000;
+  const [show, setShow]=React.useState(window.innerWidth>1000)
+
+
   return (
     <div className="commonText display">
-      <HorizontalBar ></HorizontalBar>
-      <section className="sideNav">
-        <SideNav />
-      </section>
+      <section className={`${show?'sideNav':'hideLower'}`} >
+      <HorizontalBar key="{item}" onClick={()=>{
+       setShow(!show)
+      }}></HorizontalBar>
+</section>
+      {
+      <section className={`${show?'sideNavLower':'hide'}`}  >
+        <SideNav key="{item}"/>
+      </section>}
       <article>
         <p className="glow App-header">Solidity Tricks</p>
         <div className="margins">
