@@ -15,7 +15,6 @@ function App() {
   // let show:Boolean=window.innerWidth>1000;
   const [show, setShow]=React.useState(window.innerWidth>1000)
 
-
   return (
     <div className="commonText display">
       <section className={`${show?'sideNav':'hideLower'}`} >
@@ -27,7 +26,7 @@ function App() {
       <section className={`${show?'sideNavLower':'hide'}`}  >
         <SideNav key="{item}"/>
       </section>}
-      <article>
+      <article className={`${show?'':'articleFull'}`}>
         <p className="glow App-header">Solidity Tricks</p>
         <div className="margins">
           <HashRouter>

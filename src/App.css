@@ -101,11 +101,15 @@ grid-column: 1;
 .hideLower{
   background-color: none;
 }
+.articleFull{
+grid-column:1/3;
+}
 article{
   /* grid-area: article; */
   grid-column: 2;
   grid-row: 2;
   /* padding-left: 14rem; */
+
 }
   .margins{
       margin-right: 5%;
