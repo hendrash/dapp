@@ -1,0 +1,12 @@
+.backGround{
+  background-color: #9aacf42b;
+  width: fit-content;
+  padding: 1rem;
+  font-size: large;
+  margin-bottom: 1rem;
+  color:#88869d
+}
+.backGround:hover{
+    
+  background-color: #bac7fa2b;
+}

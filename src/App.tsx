@@ -10,11 +10,14 @@ const Home = lazy(() => import("./views/Home"));
 const Blogs = lazy(() => import("./views/Blogs"));
 const HiddingCode = lazy(() => import("./views/Blogs/components/HiddingCode"));
 const NotFound = lazy(() => import("./views/NotFound"));
-
+const PhisingAttack= lazy(()=>import("./views/Blogs/components/PhisingAttack"));
 function App() {
   // let show:Boolean=window.innerWidth>1000;
   const [show, setShow]=React.useState(window.innerWidth>1000)
-
+  
+  
+  
+  
   return (
     <div className="commonText display">
       <section className={`${show?'sideNav':'hideLower'}`} >
@@ -32,8 +35,10 @@ function App() {
           <HashRouter>
             <SuspenseWithChunkError fallback={<PageLoader />}>
               <Switch>
-                <Route path="/" exact component={Blogs} />
-                <Route path="/blogs" component={HiddingCode} />
+                <Route path="/" exact component={Home} />
+                <Route path="/reentry" exact component={HiddingCode} />
+                <Route path="/blogs" component={Blogs} />
+                <Route path="/phising" component={PhisingAttack} />
                 <Route component={NotFound}></Route>
               </Switch>
             </SuspenseWithChunkError>

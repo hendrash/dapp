@@ -1,5 +1,6 @@
 import "./HorizontalBar.css";
 import "../../style/shared.css";
+import UnlockButton from "../UnlockButton";
 const HorizontalBar = (onClick:any): JSX.Element => {
   return (
     <div >

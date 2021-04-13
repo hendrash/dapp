@@ -1,5 +1,9 @@
+import React from "react";
+import UnlockButton from "../../components/UnlockButton";
 import "./Home.css"
 const Home: React.FC=()=>{
-    return(<div >Home</div>)
+    return(<div >
+       <UnlockButton></UnlockButton> 
+        Home</div>)
 }
 export default Home;
