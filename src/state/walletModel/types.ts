@@ -1,4 +1,4 @@
-export declare enum ConnectorNames {
+export enum ConnectorNames {
     Injected = "injected",
     WalletConnect = "walletconnect",
     BSC = "bsc"

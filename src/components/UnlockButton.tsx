@@ -1,8 +1,11 @@
-import { Box } from "@material-ui/core";
+import {
+    useWalletModal
+} from '@pancakeswap-libs/uikit';
+import useAuth from "../hooks/useAuth";
 import { DButton } from "./DButton/DButton";
-
 const UnlockButton=(props:any)=>{
-    
-    return(<DButton {...props}>Wallet Disconnected &#9747;</DButton>)
+    const {login, logout}=useAuth();
+    const {onPresentConnectModal}=useWalletModal(login, logout)
+    return(<DButton onClick={onPresentConnectModal}{...props}>Wallet Disconnected &#9747;</DButton>)
 }
 export default UnlockButton;

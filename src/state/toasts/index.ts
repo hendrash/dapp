@@ -30,5 +30,5 @@ reducers:{
 })
 export const {clear, remove, push}= toastsSlice.actions;
 export default toastsSlice.reducer;
-export type { Toast  }
+export type { Toast}
 export {toastTypes}

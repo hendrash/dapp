@@ -6,7 +6,7 @@ import { BscConnector } from '@binance-chain/bsc-connector'
 import { InjectedConnector } from '@web3-react/injected-connector'
 const POLLING_INTERVAL = 12000
 const rpcUrl= getNodeUrl()
-const chainId = parseInt(process.env.REACT_APP_CHAIN_ID as string, 10)
+const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
 const walletconnect= new WalletConnectConnector({
     rpc:{[chainId]:rpcUrl as string},
     bridge:"https://bridge.walletconnect.org",

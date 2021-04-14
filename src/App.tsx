@@ -1,8 +1,9 @@
-import React, { lazy, useState } from "react";
-import { Route, Router, Switch, HashRouter } from "react-router-dom";
+import React, { lazy, useEffect } from "react";
+import { HashRouter, Route, Switch } from "react-router-dom";
 import "./App.css";
 import HorizontalBar from "./components/HorizontalBar/HorizontalBar";
 import SideNav from "./components/SideNav/SideNav";
+import useEagerConnect from "./hooks/useEagerConnect";
 // import history from "./routerHistory";
 import SuspenseWithChunkError from "./views/SuspendWithChunkError";
 import { PageLoader } from "./views/SuspendWithChunkError/PageLoader";
@@ -14,10 +15,10 @@ const PhisingAttack= lazy(()=>import("./views/Blogs/components/PhisingAttack"));
 function App() {
   // let show:Boolean=window.innerWidth>1000;
   const [show, setShow]=React.useState(window.innerWidth>1000)
-  
-  
-  
-  
+  useEffect(()=>{
+    console.warn=()=>null
+  },[])
+  useEagerConnect()
   return (
     <div className="commonText display">
       <section className={`${show?'sideNav':'hideLower'}`} >
@@ -50,4 +51,6 @@ function App() {
 }
 
 export default React.memo(App);
+
+
 // https://docs.pancakeswap.finance/hiring/become-a-chef/frontend-software-engineer-javascript-typescript-react

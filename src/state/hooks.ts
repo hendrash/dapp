@@ -1,10 +1,11 @@
 import { kebabCase } from 'lodash';
 import { useMemo } from 'react';
-import { useDispatch } from 'react-redux';
-import { push as pushToast, Toast, toastTypes } from './toasts';
+import { useAppDispatch } from '.';
+import { push as pushToast } from './toasts';
+import { Toast, toastTypes } from '@pancakeswap-libs/uikit';
 
 export const useToast =() =>{
-    const dispatch= useDispatch();
+    const dispatch= useAppDispatch();
     const helper= useMemo(()=>{
     const push=(toast: Toast)=>dispatch(pushToast(toast));
         return {
