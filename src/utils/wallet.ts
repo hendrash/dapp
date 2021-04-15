@@ -1,4 +1,5 @@
 import { nodes } from "./getRpcUrl"
+
 export const setupNetwork= async ()=>{
     const provider = (window as WindowChain).ethereum
     if(provider){

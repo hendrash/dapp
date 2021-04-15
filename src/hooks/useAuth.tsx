@@ -1,23 +1,28 @@
+import { NoBscProviderError } from "@binance-chain/bsc-connector";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
+import {
+  NoEthereumProviderError,
+  UserRejectedRequestError as UserRejectedRequestErrorInjected
+} from "@web3-react/injected-connector";
+import {
+  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
+  WalletConnectConnector
+} from "@web3-react/walletconnect-connector";
 import { useCallback } from "react";
 import { useToast } from "../state/hooks";
 import { connectorLocalStorageKey, ConnectorNames } from "../state/walletModel";
 import { setupNetwork } from "../utils/wallet";
 import { connectorsByName } from "../utils/web3React";
-import {
-  NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
-} from "@web3-react/injected-connector";
-import { NoBscProviderError } from "@binance-chain/bsc-connector";
-import {
-  UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-  WalletConnectConnector,
-} from "@web3-react/walletconnect-connector";
 const useAuth = () => {
+  //this function doesnt execute when button is triggered
   const { activate, deactivate } = useWeb3React();
+  console.log('activate')
   const { toastError } = useToast();
+  //the login function never gets executed ???
   const login = useCallback((connectorID: ConnectorNames) => {
     const connector = connectorsByName[connectorID];
+    console.log("hit"+connector)
+    console.log(connector)
     if (connector) {
       activate(connector, async (error: Error) => {
         if (error instanceof UnsupportedChainIdError) {
@@ -51,8 +56,8 @@ const useAuth = () => {
         toastError("Can't find connector","The connector config is wrong")
     }
   }, []);
-  console.log(login)
-  console.log(deactivate)
+  
+  console.log("end of useAuth")
   return {login, logout: deactivate}
 };
 export default useAuth;

@@ -1,5 +1,6 @@
+import { Toast, toastTypes } from '@pancakeswap-libs/uikit'
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { Toast, ToastsState, toastTypes } from './types'
+import { ToastsState } from './types'
 const initialState: ToastsState={
     data:[]
 }

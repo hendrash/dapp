@@ -1,7 +1,7 @@
-import { Icon } from "@material-ui/core";
 import React from "react";
 import { itemType } from "./itemList";
 import "./SideNav.css";
+
 const SideItem = (p: any, index: any) => {
   const param: itemType = p.param;
   return (

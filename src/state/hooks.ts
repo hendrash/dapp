@@ -1,10 +1,11 @@
 import { kebabCase } from 'lodash';
 import { useMemo } from 'react';
 import { useAppDispatch } from '.';
-import { push as pushToast } from './toasts';
+import { push as pushToast,remove as removeToast, clear as clearToast } from './toasts';
 import { Toast, toastTypes } from '@pancakeswap-libs/uikit';
 
 export const useToast =() =>{
+    console.log("test")
     const dispatch= useAppDispatch();
     const helper= useMemo(()=>{
     const push=(toast: Toast)=>dispatch(pushToast(toast));
@@ -27,11 +28,4 @@ export const useToast =() =>{
     return helper;
 }
 
-function removeToast(id: string): any {
-    throw new Error('Function not implemented.');
-}
-
-function clearToast(): any {
-    throw new Error('Function not implemented.');
-}
 

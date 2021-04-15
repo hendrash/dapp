@@ -2,6 +2,7 @@ import "./Blogs.css";
 import ethStore from "./img/EtherStore.png";
 import attack from "./img/Attack.png";
 import solution from "./img/solution.png";
+import React from 'react'
 
 const Blogs: React.FC = () => {
   return (
