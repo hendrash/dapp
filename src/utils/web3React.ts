@@ -1,9 +1,10 @@
-import getNodeUrl from "./getRpcUrl"
+import { BscConnector } from '@binance-chain/bsc-connector'
+import { ConnectorNames } from '@pancakeswap-libs/uikit'
+import { InjectedConnector } from '@web3-react/injected-connector'
 import { WalletConnectConnector } from '@web3-react/walletconnect-connector'
 import Web3 from 'web3'
-import { ConnectorNames } from "../state/walletModel"
-import { BscConnector } from '@binance-chain/bsc-connector'
-import { InjectedConnector } from '@web3-react/injected-connector'
+import getNodeUrl from "./getRpcUrl"
+
 const POLLING_INTERVAL = 12000
 const rpcUrl= getNodeUrl()
 const chainId = parseInt(process.env.REACT_APP_CHAIN_ID, 10)
