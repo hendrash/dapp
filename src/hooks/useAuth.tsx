@@ -17,7 +17,6 @@ import { connectorsByName } from "../utils/web3React";
 const useAuth = () => {
   // this function doesnt execute when button is triggered
   const { activate, deactivate } = useWeb3React();
-  console.log("activate");
   const { toastError } = useToast();
   // the login function never gets executed ???
   const login = useCallback((connectorID: ConnectorNames) => {
@@ -58,7 +57,6 @@ const useAuth = () => {
     }
    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
-  console.log("end of useAuth");
   return { login, logout: deactivate };
 };
 export default useAuth;

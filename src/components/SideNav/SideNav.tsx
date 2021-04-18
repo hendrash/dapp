@@ -13,7 +13,6 @@ const SideNav = (...props:any): JSX.Element => {
       <ul>
     {temp.map((item, index)=>
     { 
-      console.log(index);
       return (<SideItem key={"sideNav-"+index} param={item}/>);
     }
       )
