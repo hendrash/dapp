@@ -1,6 +1,7 @@
+import React from "react"
 import HiddenCode from "./img/HiddenCode.png"
 import NFTStore from "./img/NFTStore.png"
-import React from 'react'
+
 const HiddingCodeBlog: React.FC = () => {
   return (
     <div>

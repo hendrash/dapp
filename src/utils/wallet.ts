@@ -1,10 +1,11 @@
 import { nodes } from "./getRpcUrl"
 
-export const setupNetwork= async ()=>{
+export const setupNetwork = async () => {
+console.log(window)
     const provider = (window as WindowChain).ethereum
-    if(provider){
-        const chainId= parseInt(process.env.REACT_APP_CHAIN_ID as string,10)
-        try{
+    if (provider) {
+        const chainId = parseInt(process.env.REACT_APP_CHAIN_ID as string, 10)
+        try {
             provider.request({
                 method: 'wallet_addEthereumChain',
                 params: [{
@@ -20,13 +21,14 @@ export const setupNetwork= async ()=>{
                 }
                 ]
             })
-            return true;
-        }catch(error){
+            return 0;
+        } catch (error) {
             console.error(error);
-            return false;
+            return 1;
         }
-    } else{
+    } else {
         console.error("Can't setup the BSC network on metamask because window.ethereum is undefined")
-        return false;
+        return 2;
     }
 }
+export default setupNetwork

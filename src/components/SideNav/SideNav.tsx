@@ -3,7 +3,7 @@ import { items } from "./itemList";
 import SideItem from "./SideItem";
 import "./SideNav.css";
 // import {scaleRotate as Slider} from 'react-burger-menu'
-const SideNav = (...props): JSX.Element => {
+const SideNav = (...props:any): JSX.Element => {
   // <MetisMenu/>
   const temp=items;
   return (
@@ -13,7 +13,8 @@ const SideNav = (...props): JSX.Element => {
       <ul>
     {temp.map((item, index)=>
     { 
-      return (<SideItem key={"sideItem-"+index} param={item}/>);
+      console.log(index);
+      return (<SideItem key={"sideNav-"+index} param={item}/>);
     }
       )
   } 

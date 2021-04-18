@@ -1,0 +1,17 @@
+import { Toast, ToastContainer } from "@pancakeswap-libs/uikit";
+import {useSelector} from 'react-redux'
+import useToast from "../../state/hooks";
+import { State } from "../../state/types";
+
+const ToastListener=()=>{
+    const toasts: Toast[]= useSelector((state: State)=> state.toasts.data)
+    const {remove}= useToast();
+    console.log(toasts)
+    const handleRemove=(id: string)=> remove(id);
+    return <ToastContainer toasts={toasts} onRemove={handleRemove}/>
+}
+
+export default ToastListener;
+
+
+

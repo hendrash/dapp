@@ -29,6 +29,7 @@ const useEagerConnect = () => {
         _binanceChainListener().then(() => login(connectorId))
         return
       }
+      console.log(connectorId)
       login(connectorId)
     }
   }, [login])

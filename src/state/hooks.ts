@@ -1,11 +1,10 @@
+import { Toast, toastTypes } from '@pancakeswap-libs/uikit';
 import { kebabCase } from 'lodash';
 import { useMemo } from 'react';
 import { useAppDispatch } from '.';
 import { push as pushToast,remove as removeToast, clear as clearToast } from './toasts';
-import { Toast, toastTypes } from '@pancakeswap-libs/uikit';
 
-export const useToast =() =>{
-    console.log("test")
+ const useToast =() =>{
     const dispatch= useAppDispatch();
     const helper= useMemo(()=>{
     const push=(toast: Toast)=>dispatch(pushToast(toast));
@@ -29,3 +28,4 @@ export const useToast =() =>{
 }
 
 
+export default useToast;

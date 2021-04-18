@@ -7,29 +7,29 @@ import useEagerConnect from "./hooks/useEagerConnect";
 // import history from "./routerHistory";
 import SuspenseWithChunkError from "./views/SuspendWithChunkError";
 import PageLoader from "./views/SuspendWithChunkError/PageLoader";
+import ToastListener from './components/ToastListener'
 
 const Home = lazy(() => import("./views/Home"));
 const Blogs = lazy(() => import("./views/Blogs"));
 const HiddingCode = lazy(() => import("./views/Blogs/components/HiddingCode"));
 const NotFound = lazy(() => import("./views/NotFound"));
 const PhisingAttack= lazy(()=>import("./views/Blogs/components/PhisingAttack"));
-function App() {
-  // let show:Boolean=window.innerWidth>1000;
-  // const [show, setShow]=React.useState(window.innerWidth>1000)
+const App=()=> {
+  const [show, setShow]=React.useState(window.innerWidth>1000)
   useEffect(()=>{
     console.warn=()=>null
   },[])
   useEagerConnect()
   return (
     <div className="commonText display">
-      <section className={`${false?'sideNav':'hideLower'}`} >
-      {/* <HorizontalBar key="{item}" onClick={()=>{ setShow(!show) }}></HorizontalBar> */}
+      <section className={`${show?'sideNav':'hideLower'}`} >
+      <HorizontalBar key="horizontalBar" onClick={()=>{ setShow(!show) }}></HorizontalBar>
 </section>
       
-      <section className={`${false?'sideNavLower':'hide'}`}  >
-        <SideNav key="{item}"/>
+      <section className={`${show?'sideNavLower':'hide'}`}  >
+        <SideNav key="sideNav"/>
       </section>
-      <article className={`${false?'':'articleFull'}`}>
+      <article className={`${show?'':'articleFull'}`}>
         <p className="glow App-header">Solidity Tricks</p>
         <div className="margins">
           <HashRouter>
@@ -42,6 +42,7 @@ function App() {
                 <Route component={NotFound}/>
               </Switch>
             </SuspenseWithChunkError>
+            <ToastListener/>
           </HashRouter>
         </div>
       </article>
