@@ -1,11 +1,15 @@
 import React from 'react';
 import "../../style/shared.css";
+import UnlockButton from '../UnlockButton';
 import "./HorizontalBar.css";
 
 const HorizontalBar = (onClick:any): JSX.Element => {
   return (
     <div >
-      <p className="_glowHover expandable" onClick={onClick.onClick}>&#9776;</p>
+    
+<span className="unlock">
+       <UnlockButton/> 
+</span>
     </div>
   );
 };

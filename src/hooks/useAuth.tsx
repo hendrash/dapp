@@ -1,5 +1,8 @@
 import { NoBscProviderError } from "@binance-chain/bsc-connector";
-import { connectorLocalStorageKey, ConnectorNames } from "@pancakeswap-libs/uikit";
+import {
+  connectorLocalStorageKey,
+  ConnectorNames,
+} from "@pancakeswap-libs/uikit";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 import {
   NoEthereumProviderError,
@@ -10,23 +13,27 @@ import {
   WalletConnectConnector,
 } from "@web3-react/walletconnect-connector";
 import { useCallback } from "react";
+import { resp, respErr } from "../response";
 import useToast from "../state/hooks";
+import toastHandler from "../state/toasts/toastHandler";
+import { setConnected } from "../utils/localStorageMangment";
 import { setupNetwork } from "../utils/wallet";
 import { connectorsByName } from "../utils/web3React";
 
 const useAuth = () => {
   // this function doesnt execute when button is triggered
   const { activate, deactivate } = useWeb3React();
-  const { toastError } = useToast();
-  // the login function never gets executed ???
   const login = useCallback((connectorID: ConnectorNames) => {
     const connector = connectorsByName[connectorID];
     if (connector) {
       activate(connector, async (error: Error) => {
         if (error instanceof UnsupportedChainIdError) {
           const hasSetup = await setupNetwork();
-          if (hasSetup===0) {
-            activate(connector);
+          if (hasSetup === 0) {
+            console.log(hasSetup)
+            activate(connector).then(t=>{
+              console.log(t)
+            });
           }
         } else {
           window.localStorage.removeItem(connectorLocalStorageKey);
@@ -34,7 +41,7 @@ const useAuth = () => {
             error instanceof NoEthereumProviderError ||
             error instanceof NoBscProviderError
           ) {
-            toastError("Provider Error", "No Provider was found");
+            return toastHandler({ response: resp.PROVIDER });
           } else if (
             error instanceof UserRejectedRequestErrorInjected ||
             error instanceof UserRejectedRequestErrorWalletConnect
@@ -43,19 +50,27 @@ const useAuth = () => {
               const walletConnector = connector as WalletConnectConnector;
               walletConnector.walletConnectProvider = null;
             }
-            toastError(
-              "Authorization Error",
-              "Please authorizie to access your account"
-            );
+            return toastHandler({ response: resp.AUTHORIZATION });
           } else {
-            toastError(error.name, error.message);
+            return toastHandler({
+              response: resp.REQUEST_PENDING,
+              message: error.message,
+            });
           }
         }
-      });
+      })
+        .then((t) => {
+          console.log(t);
+        }).catch((error) => {
+          console.log(error);
+        });
     } else {
-      toastError("Can't find connector", "The connector config is wrong");
+      return toastHandler({ response: resp.CANT_FIND_CONNECTOR });
     }
-   // eslint-disable-next-line react-hooks/exhaustive-deps
+    //Not sure what goes here
+    // return toastHandler({ response: resp.INJECTED });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+
   }, []);
   return { login, logout: deactivate };
 };

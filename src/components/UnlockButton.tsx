@@ -1,24 +1,31 @@
-import { ConnectorNames, useWalletModal } from "@pancakeswap-libs/uikit";
+import { ConnectorNames } from "@pancakeswap-libs/uikit";
 import React from "react";
+import 'react-toastify/dist/inject-style';
+import 'react-toastify/dist/ReactToastify.css';
 import "../../src/style/shared.css";
 import useAuth from "../hooks/useAuth";
+import { GetConnected, setAddress, setConnected } from "../utils/localStorageMangment";
+import { getSelectedAddress } from "../utils/wallet";
 import DButton from "./DButton/DButton";
+
 
 const UnlockButton = (props: any) => {
   const { login, logout } = useAuth();
-  const { onPresentConnectModal } = useWalletModal(login, logout);
   return (
     <DButton
       onClick={() => {
-    login(ConnectorNames.Injected) 
-        onPresentConnectModal();
-      }}
+         login(ConnectorNames.Injected);
+          const address=getSelectedAddress();
+          if(address){
+            setConnected(true);
+            setAddress(address)
+          }
+        }
+    }
       {...props}
     >
-      Wallet Disconnected &#9747;
-
+      { GetConnected()() ?'Wallet Connected':'Wallet Disconnected'}
     </DButton>
-      // <MetaMaskLoginButton className="backGround _glowHover"/>
   );
 };
 export default UnlockButton;

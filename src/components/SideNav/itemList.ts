@@ -1,7 +1,7 @@
 
 export const items=[{
     item: "Home",
-    index:"/"
+    index:"#/"
 },{
     item:"Hiding Code",
     index:"#/blogs"

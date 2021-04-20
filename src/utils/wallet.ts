@@ -1,8 +1,10 @@
+import { default as Web3 } from "web3"
 import { nodes } from "./getRpcUrl"
 
+const provider = (window as any).ethereum;
 export const setupNetwork = async () => {
-    const provider = (window as WindowChain).ethereum
     if (provider) {
+
         const chainId = parseInt(process.env.REACT_APP_CHAIN_ID as string, 10)
         try {
             provider.request({
@@ -30,4 +32,11 @@ export const setupNetwork = async () => {
         return 2;
     }
 }
-export default setupNetwork
+const getSelectedAddress = () => {
+    console.log(provider?.selectedAddress)
+    console.log(provider)
+    return provider?.selectedAddress;
+
+}
+export default {setupNetwork}
+export  {getSelectedAddress}
