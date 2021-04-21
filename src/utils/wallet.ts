@@ -1,5 +1,4 @@
-import { default as Web3 } from "web3"
-import { nodes } from "./getRpcUrl"
+import { nodes } from "./getRpcUrl";
 
 const provider = (window as any).ethereum;
 export const setupNetwork = async () => {
@@ -39,4 +38,5 @@ const getSelectedAddress = () => {
 
 }
 export default {setupNetwork}
-export  {getSelectedAddress}
+export { getSelectedAddress };
+
