@@ -1,7 +1,7 @@
-FROM node:10
+FROM node:14.16.0
 EXPOSE 3000
 WORKDIR /dapp
 COPY package.json /dapp
-RUN npx yarn install && npx yarn build
 COPY . /dapp
+RUN npx yarn install 
 CMD npx yarn start
