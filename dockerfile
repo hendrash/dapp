@@ -5,3 +5,6 @@ COPY package.json /dapp
 COPY . /dapp
 RUN npx yarn install 
 CMD npx yarn start
+
+# sudo docker build -t my-nodejs-app .
+# sudo docker run -it -p 3000:3000 my-nodejs-app
