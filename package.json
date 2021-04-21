@@ -20,6 +20,7 @@
     "@web3-react/injected-connector": "^6.0.7",
     "@web3-react/walletconnect-connector": "^6.1.9",
     "apollo": "^2.32.5",
+    "ethereumjs-abi": "^0.6.8",
     "husky": "^6.0.0",
     "lodash": "^4.17.21",
     "material": "^0.4.3",
