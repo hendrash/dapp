@@ -1,6 +1,6 @@
-import { useQuery } from "@apollo/client";
+// import { useQuery } from "@apollo/client";
 import { useEffect } from "react";
-import { UNISWAP } from "../schema/uniswap-schema";
+import { UNISWAP } from "../schema/uniswap-schema.text";
 
 export function GetUniswap(){
     const {error,loading, data}=useQuery(UNISWAP);
