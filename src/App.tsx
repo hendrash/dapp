@@ -15,6 +15,7 @@ const Home = lazy(() => import("./views/Home"));
 const Blogs = lazy(() => import("./views/Blogs"));
 const HiddingCode = lazy(() => import("./views/Blogs/components/HiddingCode"));
 const NotFound = lazy(() => import("./views/NotFound"));
+const Profile = lazy(()=> import("./views/Profile"))
 const PhisingAttack = lazy(
   () => import("./views/Blogs/components/PhisingAttack")
 );
@@ -38,7 +39,7 @@ const App = () => {
         <SideNav key="sideNav" />
       </section>
       <article className={`${show ? "" : "articleFull"}`}>
-        <p className="glow App-header">Reliability Token</p>
+        <p className="glow App-header">Reliability Coin</p>
         <div className="margins">
           <HashRouter>
             <SuspenseWithChunkError fallback={<PageLoader />}>
@@ -47,6 +48,8 @@ const App = () => {
                 <Route path="/reentry" exact component={HiddingCode} />
                 <Route path="/blogs" component={Blogs} />
                 <Route path="/phising" component={PhisingAttack} />
+                <Route path="/profile" component={Profile}/>
+
                 <Route component={NotFound} />
               </Switch>
             </SuspenseWithChunkError>

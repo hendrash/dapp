@@ -11,6 +11,9 @@ export const items=[{
 },{
     item:"Reentry",
     index:"#/reentry"
+},{
+    item: "My Profile",
+    index: "#/profile"
 }]
 export type itemType= {
     item: string,

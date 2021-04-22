@@ -1,22 +1,20 @@
 import { NoBscProviderError } from "@binance-chain/bsc-connector";
 import {
   connectorLocalStorageKey,
-  ConnectorNames,
+  ConnectorNames
 } from "@pancakeswap-libs/uikit";
 import { UnsupportedChainIdError, useWeb3React } from "@web3-react/core";
 import {
   NoEthereumProviderError,
-  UserRejectedRequestError as UserRejectedRequestErrorInjected,
+  UserRejectedRequestError as UserRejectedRequestErrorInjected
 } from "@web3-react/injected-connector";
 import {
   UserRejectedRequestError as UserRejectedRequestErrorWalletConnect,
-  WalletConnectConnector,
+  WalletConnectConnector
 } from "@web3-react/walletconnect-connector";
 import { useCallback } from "react";
-import { resp, respErr } from "../response";
-import useToast from "../state/hooks";
+import { resp } from "../response";
 import toastHandler from "../state/toasts/toastHandler";
-import { setConnected } from "../utils/localStorageMangment";
 import { setupNetwork } from "../utils/wallet";
 import { connectorsByName } from "../utils/web3React";
 
@@ -71,7 +69,7 @@ const useAuth = () => {
     // return toastHandler({ response: resp.INJECTED });
     // eslint-disable-next-line react-hooks/exhaustive-deps
 
-  }, []);
+  }, [activate]);
   return { login, logout: deactivate };
 };
 export default useAuth;
