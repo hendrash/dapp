@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "dapp397e81f1": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}

@@ -28,9 +28,7 @@ const useAuth = () => {
         if (error instanceof UnsupportedChainIdError) {
           const hasSetup = await setupNetwork();
           if (hasSetup === 0) {
-            console.log(hasSetup)
             activate(connector).then(t=>{
-              console.log(t)
             });
           }
         } else {
@@ -57,11 +55,11 @@ const useAuth = () => {
           }
         }
       })
-        .then((t) => {
-          console.log(t);
-        }).catch((error) => {
-          console.log(error);
-        });
+        // .then((t) => {
+        //   console.log(t);
+        // }).catch((error) => {
+        //   console.log(error);
+        // });
     } else {
       return toastHandler({ response: resp.CANT_FIND_CONNECTOR });
     }

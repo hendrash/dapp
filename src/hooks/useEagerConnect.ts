@@ -24,7 +24,6 @@ const useEagerConnect = () => {
   const { login } = useAuth()
   useEffect(() => {
     const connectorId = window.localStorage.getItem(connectorLocalStorageKey) as ConnectorNames
-    console.log(connectorId)
     if (connectorId) {
       const isConnectorBinanceChain = connectorId === ConnectorNames.BSC
       const isBinanceChainDefined = Reflect.has(window, 'BinanceChain')
@@ -37,7 +36,6 @@ const useEagerConnect = () => {
       login(connectorId)
     }
   }, [login])
-  console.log(getSelectedAddress())
   if(getSelectedAddress()){
     setConnected(true)
   }else setConnected(false)

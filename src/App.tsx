@@ -10,7 +10,9 @@ import useEagerConnect from "./hooks/useEagerConnect";
 import SuspenseWithChunkError from "./views/SuspendWithChunkError";
 import PageLoader from "./views/SuspendWithChunkError/PageLoader";
 import "./style/shared.css";
-
+import awsmobile from "./aws-exports";
+import Amplify from 'aws-amplify'
+Amplify.configure(awsmobile)
 const Home = lazy(() => import("./views/Home"));
 const Blogs = lazy(() => import("./views/Blogs"));
 const HiddingCode = lazy(() => import("./views/Blogs/components/HiddingCode"));

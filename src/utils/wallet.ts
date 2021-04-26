@@ -32,8 +32,6 @@ export const setupNetwork = async () => {
     }
 }
 const getSelectedAddress = () => {
-    console.log(provider?.selectedAddress)
-    console.log(provider)
     return provider?.selectedAddress;
 
 }
