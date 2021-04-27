@@ -10,13 +10,9 @@ const awsmobile = {
     "oauth": {
         "domain": "dapp397e81f1-397e81f1-dev.auth.us-east-1.amazoncognito.com",
         "scope": [
-            "phone",
-            "email",
-            "openid",
-            "profile",
-            "aws.cognito.signin.user.admin"
+            "phone", "email", "openid", "profile", "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://dapp397e81f1-397e81f1-dev.auth.us-east-1.amazoncognito.com/",
+        "redirectSignIn": "https://develop.d1vsxyu3azx5or.amplifyapp.com/",
         "redirectSignOut": "https://localhost:3000/",
         "responseType": "code"
     },
