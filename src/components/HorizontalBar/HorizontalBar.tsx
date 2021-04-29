@@ -1,15 +1,39 @@
-import React from 'react';
+import { Auth } from "aws-amplify";
+import React from "react";
 import "../../style/shared.css";
-import UnlockButton from '../UnlockButton';
+import DButton from "../DButton/DButton";
+import UnlockButton from "../UnlockButton";
 import "./HorizontalBar.css";
 
-const HorizontalBar = (onClick:any): JSX.Element => {
+const HorizontalBar = (props: any): JSX.Element => {
   return (
-    <div >
-    
-<span className="unlock">
-       <UnlockButton/> 
-</span>
+    <div>
+      <ul className="unlock">
+        <li className="inLine">
+          <SignIn />
+        </li>
+
+        <li className="inLine">
+          {" "}
+          <UnlockButton />{" "}
+        </li>
+      </ul>
+    </div>
+  );
+};
+const SignIn: React.FC = (props: any) => {
+  const { to, staticContext, ...rest } = props;
+  return (
+    <div>
+      <DButton
+        onClick={() => {
+          Auth.federatedSignIn();
+        }}
+        {...rest}
+      >
+        {" "}
+        Sign In{" "}
+      </DButton>
     </div>
   );
 };

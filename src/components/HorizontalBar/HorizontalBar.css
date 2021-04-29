@@ -1,7 +1,15 @@
  
 .unlock{
     float: right;
-    padding-top: 2rem;
-    padding-right: 2rem;
+    display: flex; /* or inline-flex */
+    /* padding-top: 2rem; */
+    /* padding-right: 2rem; */
 
+    margin: 2rem;
+}
+.inLine{
+    /* margin: 2rem; */
+padding: 0.5rem;
+    /* display: none */
+    list-style-type:none;
 }

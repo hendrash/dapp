@@ -4,7 +4,8 @@
   padding: 1rem;
   font-size: large;
   margin-bottom: 1rem;
-  color:#88869d
+  color:#88869d;
+  display: inline;
 }
 .backGround:hover{
     
