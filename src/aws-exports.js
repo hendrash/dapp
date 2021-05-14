@@ -8,7 +8,7 @@ const awsmobile = {
     "aws_user_pools_id": "us-east-1_TPwmsxeEB",
     "aws_user_pools_web_client_id": "5c91su2jc69078tgj22uacpp0k",
     "oauth": {
-        "domain": "dapp397e81f1-397e81f1-dev.auth.us-east-1.amazoncognito.com",
+        "domain": "dapp397e81f1-397e81f2-dev.auth.us-east-1.amazoncognito.com",
         "scope": [
             "phone",
             "email",
@@ -16,7 +16,7 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://localhost:3000/",
+        "redirectSignIn": "https://localhost:3000/, https://dapp397e81f1-397e81f2-dev.auth.us-east-1.amazoncognito.com",
         "redirectSignOut": "https://localhost:3000/",
         "responseType": "code"
     },
