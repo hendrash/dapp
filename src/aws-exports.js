@@ -7,8 +7,9 @@ const awsmobile = {
     "aws_cognito_region": "us-east-1",
     "aws_user_pools_id": "us-east-1_TPwmsxeEB",
     "aws_user_pools_web_client_id": "5c91su2jc69078tgj22uacpp0k",
+
     "oauth": {
-        "domain": "dapp397e81f1-397e81f2-dev.auth.us-east-1.amazoncognito.com",
+        "domain": "dapp6583b31e-6583b31e-develop.auth.us-east-1.amazoncognito.com",
         "scope": [
             "phone",
             "email",
@@ -16,10 +17,11 @@ const awsmobile = {
             "profile",
             "aws.cognito.signin.user.admin"
         ],
-        "redirectSignIn": "https://localhost:3000/, https://dapp397e81f1-397e81f2-dev.auth.us-east-1.amazoncognito.com",
+        "redirectSignIn": "https://develop.d21qizb84npe5a.amplifyapp.com/",
         "redirectSignOut": "https://localhost:3000/",
         "responseType": "code"
     },
+    // https://localhost:3000/, 
     "federationTarget": "COGNITO_USER_POOLS",
     "aws_appsync_graphqlEndpoint": "https://7ghx2bcrgfeyvi6zx3f24t7di4.appsync-api.us-east-1.amazonaws.com/graphql",
     "aws_appsync_region": "us-east-1",
