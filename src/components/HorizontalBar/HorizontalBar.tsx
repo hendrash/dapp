@@ -27,7 +27,12 @@ const SignIn: React.FC = (props: any) => {
     <div>
       <DButton
         onClick={() => {
-          Auth.federatedSignIn();
+          try{
+          Auth.federatedSignIn();}
+          catch(error){
+            console.error(Auth,error)
+
+          }
         }}
         {...rest}
       >
