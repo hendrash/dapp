@@ -5,6 +5,7 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/inject-style";
 import "react-toastify/dist/ReactToastify.css";
 import "./App.css";
+import awsmobile from "./aws-exports";
 import HorizontalBar from "./components/HorizontalBar/HorizontalBar";
 import SideNav from "./components/SideNav/SideNav";
 import useEagerConnect from "./hooks/useEagerConnect";
@@ -12,7 +13,7 @@ import "./style/shared.css";
 import updateRedirectURL from "./utils/updateRedirectURL";
 import SuspenseWithChunkError from "./views/SuspendWithChunkError";
 import PageLoader from "./views/SuspendWithChunkError/PageLoader";
-Amplify.configure(window.location.hostname);
+Amplify.configure(awsmobile);
 const Home = lazy(() => import("./views/Home"));
 const Blogs = lazy(() => import("./views/Blogs"));
 const HiddingCode = lazy(() => import("./views/Blogs/components/HiddingCode"));
@@ -24,7 +25,7 @@ const PhisingAttack = lazy(
 const App = () => {
   // GetCognitoUser().then((t) => {
   //   console.log(t);
-  
+
   //   // console.log(auth)
   // });
   const [show, setShow] = React.useState(window.innerWidth > 1000);
